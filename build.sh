@@ -287,7 +287,7 @@ build_with_func(){
    ${download_way}  "${download_url}" ${lib_name} || exit 1
    cd ${lib_name}
 		echo_log "configrue  dir as $ $(pwd)"
-		${configure_way} "${configure_options}" &&
+		eval ${configure_way} \"${configure_options}\" &&
 		do_make  &&
 		do_make_install | tee ${lib_info_dir}/${lib_name} || (echo_log "${lib_name} install failed ... \n" && exit 1)
 
