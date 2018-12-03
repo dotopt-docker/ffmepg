@@ -16,6 +16,7 @@ RUN set -x \
         cmake \
         autotools \
         autoconf \
+        automake \
         "\
     && yum install -y ${BUILD_DEPS}
 
