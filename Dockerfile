@@ -15,12 +15,13 @@ RUN set -x \
         make \
         cmake \
         autotools \
-        autoreconf \
+        autoconf \
         "\
     && yum install -y ${BUILD_DEPS}
 
 ADD  build.sh /opt/
 WORKDIR /opt/
-RUN ./build.sh
+RUN chmod +x ./build.sh \
+    && ./build.sh
 
 CMD [ "/bin/bash" ]
