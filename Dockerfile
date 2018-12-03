@@ -10,7 +10,7 @@ RUN set -x \
         pkg-config \
         patch \
         gcc \
-        g++ \
+        gcc-c++ \
         make \
         cmake \
         autotools \
