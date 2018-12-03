@@ -19,8 +19,8 @@ RUN set -x \
         "\
     && yum install -y ${BUILD_DEPS}
 
-ADD  ffmpeg_build.sh /opt/
+ADD  build.sh /opt/
 WORKDIR /opt/
-RUN ./ffmpeg_build.sh
+RUN ./build.sh
 
 CMD [ "/bin/bash" ]
