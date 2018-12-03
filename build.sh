@@ -315,6 +315,19 @@ build_yasm(){
 	return $?
 }
 
+build_nasm(){
+
+	local lib_name=nasm
+	local download_url="https://www.nasm.us/pub/nasm/releasebuilds/2.14/nasm-2.14.tar.xz"
+	local download_way="download_and_unpack_file"
+	local configure_way="do_configure"
+	local configure_options="--prefix=${lib_dir} --disable-shared"
+
+	build_with_func "${lib_name}" "${download_url}" "${download_way}" "${configure_way}"  "${configure_options}"
+
+	return $?
+}
+
 
 
 build_x264(){
@@ -531,6 +544,7 @@ parse_arguments $*
 set_pkg_config_env
 
 build_yasm &&
+build_nasm &&
 build_x264 &&
 build_x265 &&
 build_fdk-aac &&

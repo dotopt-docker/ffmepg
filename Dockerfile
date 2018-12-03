@@ -9,7 +9,6 @@ RUN set -x \
         hg \
         pkg-config \
         patch \
-        nasm \
         gcc \
         g++ \
         make \
